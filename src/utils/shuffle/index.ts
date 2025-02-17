@@ -14,20 +14,21 @@
   limitations under the License.
  ******************************************************************************************************************** */
 
-const shuffle = (array: any[]) => {
-  const resultArray = [...array]; '';
-  let currentIndex = array.length, randomIndex;
-
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [resultArray[currentIndex], resultArray[randomIndex]] = [
-      resultArray[randomIndex], resultArray[currentIndex],
-    ];
-  }
-
-  return resultArray;
-};
-
-export default shuffle;
+  const shuffle = (array: any[]) => {
+    const resultArray = [...array];  // Removed the unnecessary empty string expression
+    let currentIndex = array.length, randomIndex;
+  
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      [resultArray[currentIndex], resultArray[randomIndex]] = [
+        resultArray[randomIndex], resultArray[currentIndex],
+      ];
+    }
+  
+    return resultArray;
+  };
+  
+  export default shuffle;
+  
